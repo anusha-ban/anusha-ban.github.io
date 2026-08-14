@@ -56,9 +56,24 @@ a{color:inherit}
 .deck{font-size:20px;color:var(--graphite);max-width:58ch;margin:26px 0 0}
 .deck strong{color:var(--ink);font-weight:600}
 
-/* ---------- figure ---------- */
-.figure{margin:56px 0 0;background:var(--panel);border:1px solid var(--rule)}
-.figure svg{display:block;width:100%;height:auto}
+/* ---------- figures ---------- */
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0 24px}
+.fig{background:var(--panel);border:1px solid var(--rule);display:flex;flex-direction:column}
+.fig a{display:block;flex:1}
+.fig img{display:block;width:100%;height:auto;padding:14px 16px 4px}
+.fig a:hover img,.fig a:focus-visible img{opacity:.82}
+.figcap{
+  font-family:var(--data);font-size:11px;line-height:1.5;color:var(--graphite);
+  padding:10px 14px;border-top:1px solid var(--rule);
+}
+.fig--solo{margin:22px 0 6px;max-width:620px}
+.fig--narrow{max-width:528px}
+.figpair--tight{margin:22px 0 6px;max-width:720px}
+.fig--photo img{padding:0;aspect-ratio:4/3;object-fit:cover;object-position:center}
+.fig--natural img{aspect-ratio:auto}
+.fig--dark{background:#080A0D;border-color:#080A0D}
+.fig--dark img{padding:0}
+.fig--dark .figcap{border-top-color:rgba(255,255,255,.14);color:#8D99A6;max-width:none}
 .figcap{
   display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
   font-family:var(--data);font-size:11.5px;color:var(--graphite);
@@ -92,6 +107,15 @@ a{color:inherit}
 .cite{font-size:16.5px;max-width:66ch}
 .cite b{font-weight:600}
 .cite i{color:var(--graphite)}
+.cite a{color:var(--signal);text-decoration:none;border-bottom:1px solid rgba(11,111,184,.3)}
+.cite a:hover,.cite a:focus-visible{border-bottom-color:var(--signal)}
+.stamp{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--signal);border:1px solid rgba(11,111,184,.4);
+  padding:2px 7px;margin-left:8px;text-decoration:none;
+  display:inline-block;vertical-align:2px;white-space:nowrap;border-bottom-width:1px;
+}
+.stamp:hover,.stamp:focus-visible{background:var(--signal);color:var(--panel);border-color:var(--signal)}
 
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
 .cols h3{font-family:var(--data);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);font-weight:500;margin:0 0 12px}
@@ -112,17 +136,6 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
 
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 
-/* ---------- draw-on animation ---------- */
-.trace{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.5s ease-out forwards}
-.tracklet{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw .55s ease-out forwards}
-.pt{opacity:0;animation:fade .3s ease-out forwards}
-.plotchrome{opacity:0;animation:fade .6s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes fade{to{opacity:1}}
-@media (prefers-reduced-motion:reduce){
-  .trace,.tracklet,.pt,.plotchrome{animation:none;stroke-dashoffset:0;opacity:1}
-}
-
 @media (max-width:820px){
   body{font-size:17px}
   .wrap{padding:0 20px}
@@ -130,6 +143,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
   .marginalia{display:flex;flex-wrap:wrap;gap:0 26px;line-height:1.6}
   .marginalia .tag{width:100%}
   .cols{grid-template-columns:1fr;gap:26px}
+  .figpair{grid-template-columns:1fr;gap:14px}
   .hero{padding:52px 0 0}
   .band{margin-top:60px}
 }
@@ -142,7 +156,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
     <div class="wordmark">Anusha Banninthaya</div>
     <nav>
       <a href="#research">Research</a>
-      <a href="#applied">Projects</a>
+      <a href="#applied">Professional</a>
       <a href="#publications">Publications</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -150,26 +164,18 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
   </header>
 
   <section class="hero">
-    <p class="eyebrow">Orbit determination · Electric propulsion · Space plasma</p>
+    <p class="eyebrow">Electric propulsion · Plasma Physics · Astrodynamics</p>
     <h1>Estimating orbits from <em>sparse tracking arcs</em>.</h1>
     <p class="deck">
-      I work on both halves of the problem: the estimation software that turns
-      short, scattered observations into an orbit, and the propulsion hardware
-      that changes one. Master of Engineering in Space Engineering at the
-      <strong>University of Michigan</strong>. Applying to PhD programs for
-      <span class="todo">Fall 2027</span> entry.
+      Welcome! My name is Anusha Banninthaya and I am currently a Master of Engineering in Space Engineering student at the
+      <strong>University of Michigan</strong>.  Everything on this page is a project I loved working on from orbit estimators I have
+      debugged line by line to ionospheric plasma physics I have simulated for satellites and thrusters I have etched and
+      tested by hand. I am applying to PhD programs for <span class="todo">Fall 2027</span>
+      entry and I hope to spend my career in electric propulsion research, working toward
+      the day the electric rocket is not a concept but the ordinary way we move through space.
     </p>
   </section>
 
-  <figure class="figure">
-    <svg id="plot" viewBox="0 0 1000 320" role="img"
-         aria-label="Range-rate against time. Three short observation arcs sit on a single continuous predicted curve, separated by long unobserved gaps.">
-    </svg>
-    <figcaption class="figcap">
-      <span>Fig. 1 — The orbit determination problem: short observed arcs, one continuous trajectory.</span>
-      <span>Illustrative</span>
-    </figcaption>
-  </figure>
 </div>
 
 <!-- ============ RESEARCH ============ -->
@@ -192,8 +198,44 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         <p>
           I extend an object-oriented MATLAB orbit determination framework spanning
           initial orbit determination, batch weighted least-squares precise orbit
-          determination, and high-fidelity propagation.
+          determination, and high-fidelity propagation, applied to low Earth orbit debris.
         </p>
+        <p>
+          Post-fit angular residuals now sit below 10 arcseconds, down from more than 300 —
+          a roughly thirty-fold improvement. Residuals at that level mean the estimator's
+          error is approaching the sensor's own, which is the point at which the orbit
+          solution becomes useful for conjunction work.
+        </p>
+        <p>
+          The radar path is where the novel work sits. A tracking radar returns range and
+          range-rate but no angles, so the line of sight is unconstrained by any single
+          observation and the standard angles-based machinery does not transfer. I developed
+          an initial orbit determination method that recovers a state estimate from range and
+          range-rate alone, with no angular data, and hands that estimate to the precise
+          orbit determination stage.
+        </p>
+
+        <figure class="figpair">
+          <div class="fig">
+            <a href="residuals-optical.png">
+              <img src="residuals-optical.png" width="1292" height="773"
+                   alt="Post-fit optical residuals against time since epoch, for two observation passes about 1.7 hours apart. Right ascension and declination residuals scatter about zero.">
+            </a>
+            <figcaption class="figcap">
+              <span>Fig. 1 — Optical. RA 6.6″ · DEC 2.0″ RMS</span>
+            </figcaption>
+          </div>
+          <div class="fig">
+            <a href="residuals-radar.png">
+              <img src="residuals-radar.png" width="926" height="587"
+                   alt="Post-fit radar residuals against time since epoch, across three passes over roughly three hours. Range and range-rate residuals scatter about zero.">
+            </a>
+            <figcaption class="figcap">
+              <span>Fig. 2 — Radar. Range 8.4 m · Range-rate 3.3 m/s RMS</span>
+            </figcaption>
+          </div>
+        </figure>
+
         <p>
           My main contribution to the estimator is on the drag side: a Bayesian a priori
           ballistic coefficient estimate paired with an adaptive drag observability
@@ -232,6 +274,27 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
           output, and evaluated a new method for aligning microchannel plates in a Chevron
           configuration using a laser source and light meter.
         </p>
+
+        <div class="figpair figpair--tight">
+          <div class="fig">
+            <a href="trim-graphene-foil.png">
+              <img src="trim-graphene-foil.png" width="478" height="476"
+                   alt="Probability density of fractional energy loss for hydrogen ions passing through graphene foil, plotted for incidence angles from zero to thirty degrees over a histogram of the zero-degree case.">
+            </a>
+            <div class="figcap">
+              <span>Fig. 3 — Energy loss of H ions through graphene foil, TRIM. Mean ΔE/E₀ rises from 0.0122 at normal incidence to 0.0140 at 30°.</span>
+            </div>
+          </div>
+          <div class="fig fig--photo fig--natural">
+            <a href="lab-mcp-laser.jpg">
+              <img src="lab-mcp-laser.jpg" width="482" height="501"
+                   alt="Optical bench built from aluminium extrusion, with a laser projecting a red spot onto a plate mounted on a stage, and a handheld light meter reading out beside it.">
+            </a>
+            <div class="figcap">
+              <span>Fig. 4 — Microchannel plate alignment bench. Laser source above the stage, light meter at right.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -257,9 +320,19 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         <p>
           Reconfiguring Ansys EMA3D Charge across satellite geometries and orbital altitudes
           brought simulation runtime down from 24 hours to 5, which is what made the parameter
-          sweep feasible at all. This work became a first-author-adjacent paper in
-          <em>Acta Astronautica</em>.
+          sweep feasible at all. I contributed the formal analysis and data curation to the
+          resulting paper in <em>Acta Astronautica</em>.
         </p>
+
+        <div class="fig fig--solo">
+          <a href="plasma-potential.png">
+            <img src="plasma-potential.png" width="710" height="377"
+                 alt="Two three-dimensional plots of plasma potential around a flat satellite body, shown side by side. A wake of depressed potential extends behind the spacecraft in each, larger in the second panel.">
+          </a>
+          <div class="figcap">
+            <span>Fig. 5 — Plasma potential around a satellite held at −50 V. (a) 400 km, (b) 700 km. ProPIC simulation output.</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -277,18 +350,56 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         <ul class="stack">
           <li>
             <span class="what">Venus mission architecture — propulsion lead</span>
-            <span class="why">Led propulsion trade studies for an L3Harris mission concept as head of a four-person subteam. Optimized the Earth–Venus trajectory for transit time and propellant using NASA EMTG, arriving at a hybrid chemical–electric architecture. Assessed ground coverage, revisit time, and ΔV in Ansys STK, and wrote MATLAB and Python tools to compute disturbance torques and size reaction wheels and thrusters.</span>
+            <span class="why">Led propulsion trade studies for an L3Harris mission concept as head of a four-person subteam. Optimized the Earth–Venus trajectory for transit time and propellant using NASA EMTG, arriving at a hybrid chemical–electric architecture with a Hall effect thruster for the low-thrust legs. Assessed ground coverage, revisit time, and ΔV in Ansys STK, and wrote MATLAB and Python tools to compute disturbance torques and size reaction wheels and thrusters.</span>
             <span class="meta">L3Harris · Advisor Prof. Steven Battel · Aug 2025 – present</span>
+            <div class="fig fig--dark fig--solo">
+              <a href="venus-emtg.png">
+                <img src="venus-emtg.png" width="1059" height="858"
+                     alt="NASA EMTG output showing a low-thrust Earth to Venus transfer. Concentric orbit traces with thrust vectors marked along the spiral, annotated with launch, begin spiral, and end spiral events.">
+              </a>
+              <div class="figcap">
+                <span>Fig. 6 — Earth–Venus low-thrust transfer, NASA EMTG. Launch 14 Jan 2032, Venus spiral complete 14 Jan 2036. Departure C3 1.314 km²/s², DLA 28.5°. Wet mass 3167 kg, 1735 kg at end of spiral.</span>
+              </div>
+            </div>
           </li>
           <li>
             <span class="what">Carbon nanotube field emission neutralizers</span>
             <span class="why">Assembled and tested CNT field emission neutralizer configurations in a vacuum chamber. Coupling the nanotubes with resistors raised applicable voltage by 300 V and emission current by 1.5 mA — a neutralization approach that saves both mass and propellant. Measured a sub-20 W Hall effect thruster achieving full plume neutralization at low krypton flow rates, and designed a vacuum-qualified ion beam dissipation system in SolidWorks.</span>
             <span class="meta">Aliena, Singapore · Space Systems Engineering Intern · Jun – Aug 2024</span>
+            <div class="figpair figpair--tight">
+              <div class="fig fig--photo">
+                <a href="lab-cnt-thruster.jpg">
+                  <img src="lab-cnt-thruster.jpg" width="544" height="723"
+                       alt="Three carbon nanotube emitters mounted alongside a Hall thruster on a stand inside a stainless steel vacuum chamber, with kapton-taped wiring and gas lines running to the feedthroughs.">
+                </a>
+                <div class="figcap">
+                  <span>Fig. 7 — Three-emitter CNT neutralizer configuration with the Hall thruster, chamber-mounted.</span>
+                </div>
+              </div>
+              <div class="fig fig--photo">
+                <a href="lab-beam-dissipation.jpg">
+                  <img src="lab-beam-dissipation.jpg" width="699" height="529"
+                       alt="Angled graphite louver array mounted on a frame inside a vacuum chamber, facing a perforated screen, with instrumentation wiring at the left.">
+                </a>
+                <div class="figcap">
+                  <span>Fig. 8 — Ion beam dissipation system, designed in SolidWorks and qualified for chamber operation.</span>
+                </div>
+              </div>
+            </div>
           </li>
           <li>
             <span class="what">VLEO mission planning and hardware-in-the-loop testing</span>
             <span class="why">Modeled the space environment around a very low Earth orbit satellite in MATLAB, and built an orbit propagator coupled to an electric propulsion model for hardware-in-the-loop ADCS testing, matching FreeFlyer to 99 percent. Ran drag and deorbit analysis across ram-pointing and sun-tracking configurations.</span>
             <span class="meta">Satellite Research Centre, Singapore · Mission Planning Intern · Jan – May 2024</span>
+            <div class="fig fig--solo fig--narrow">
+              <a href="orbit-eci.png">
+                <img src="orbit-eci.png" width="495" height="460"
+                     alt="Three-dimensional plot of a satellite orbit traced in red around a rendered Earth, axes labelled X, Y and Z position in metres in the Earth-centred inertial frame.">
+              </a>
+              <div class="figcap">
+                <span>Fig. 9 — Propagated orbit in the ECI frame, output from the MATLAB propagator. Agreed with FreeFlyer to 99 percent.</span>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -442,102 +553,6 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
     <span>Ann Arbor, Michigan · Updated <span class="todo">August 2026</span></span>
   </footer>
 </div>
-
-<script>
-(function(){
-  const svg = document.getElementById('plot');
-  const NS = 'http://www.w3.org/2000/svg';
-  const W = 1000, H = 320;
-  const L = 62, R = 28, T = 26, B = 44;
-  const x0 = L, x1 = W - R, y0 = T, y1 = H - B;
-
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const f = t => 0.78*Math.sin(2*Math.PI*t) + 0.22*Math.sin(6*Math.PI*t + 1.1);
-  const AMP = 7.2;
-  const X = t => x0 + t*(x1-x0);
-  const Y = v => (y0+y1)/2 - (v/AMP)*((y1-y0)/2);
-
-  const el = (n, a, cls) => {
-    const e = document.createElementNS(NS, n);
-    for (const k in a) e.setAttribute(k, a[k]);
-    if (cls) e.setAttribute('class', cls);
-    svg.appendChild(e);
-    return e;
-  };
-
-  [-5, 0, 5].forEach(v => {
-    el('line', {x1:x0, x2:x1, y1:Y(v), y2:Y(v),
-      stroke:'#D3D9E0', 'stroke-width': v===0 ? 1.2 : 1,
-      'stroke-dasharray': v===0 ? 'none' : '2 5'}, 'plotchrome');
-    el('text', {x:x0-12, y:Y(v)+4, 'text-anchor':'end',
-      'font-family':'IBM Plex Mono, monospace', 'font-size':11, fill:'#5A6672'},
-      'plotchrome').textContent = (v>0?'+':'') + v;
-  });
-  el('text', {x:x0-12, y:y0+2, 'text-anchor':'end',
-    'font-family':'IBM Plex Mono, monospace', 'font-size':10, fill:'#5A6672',
-    'letter-spacing':'0.12em'}, 'plotchrome').textContent = 'KM/S';
-  el('line', {x1:x0, x2:x1, y1:y1+10, y2:y1+10, stroke:'#10161D', 'stroke-width':1}, 'plotchrome');
-  el('text', {x:x1, y:y1+30, 'text-anchor':'end',
-    'font-family':'IBM Plex Mono, monospace', 'font-size':10.5, fill:'#5A6672',
-    'letter-spacing':'0.12em'}, 'plotchrome').textContent = 'TIME →';
-
-  const path = pts => 'M' + pts.map(p => p[0].toFixed(2)+' '+p[1].toFixed(2)).join(' L');
-  const sample = (a,b,n) => {
-    const out = [];
-    for (let i=0;i<=n;i++){ const t = a + (b-a)*i/n; out.push([X(t), Y(f(t))]); }
-    return out;
-  };
-  const animate = (node, dur, delay) => {
-    const len = node.getTotalLength();
-    node.style.setProperty('--len', len);
-    node.style.animationDuration = dur + 'ms';
-    node.style.animationDelay = delay + 'ms';
-  };
-
-  const curve = el('path', {d: path(sample(0,1,400)), fill:'none',
-    stroke:'#5A6672', 'stroke-width':1.1, 'stroke-opacity':0.5}, reduce ? '' : 'trace');
-  if (!reduce) animate(curve, 1500, 200);
-
-  const windows = [
-    {a:0.055, b:0.115, label:'arc 01'},
-    {a:0.435, b:0.495, label:'arc 02'},
-    {a:0.800, b:0.860, label:'arc 03'}
-  ];
-
-  windows.forEach((w, i) => {
-    const pts = sample(w.a, w.b, 60);
-    const seg = el('path', {d: path(pts), fill:'none', stroke:'#0B6FB8',
-      'stroke-width':3, 'stroke-linecap':'round'}, reduce ? '' : 'tracklet');
-    if (!reduce) animate(seg, 550, 1500 + i*260);
-
-    for (let k=0; k<=6; k++){
-      const t = w.a + (w.b-w.a)*k/6;
-      const dot = el('circle', {cx:X(t), cy:Y(f(t)), r:2.6, fill:'#0B6FB8'}, reduce ? '' : 'pt');
-      if (!reduce) dot.style.animationDelay = (1700 + i*260 + k*30) + 'ms';
-    }
-
-    const mid = (w.a + w.b)/2;
-    const tick = el('line', {x1:X(mid), x2:X(mid), y1:Y(f(mid))+10, y2:y1+10,
-      stroke:'#0B6FB8', 'stroke-width':1, 'stroke-opacity':0.35,
-      'stroke-dasharray':'2 4'}, reduce ? '' : 'pt');
-    const lab = el('text', {x:X(mid), y:y1+30, 'text-anchor':'middle',
-      'font-family':'IBM Plex Mono, monospace', 'font-size':11.5, fill:'#0B6FB8'},
-      reduce ? '' : 'pt');
-    lab.textContent = w.label;
-    if (!reduce){
-      tick.style.animationDelay = (1850 + i*260) + 'ms';
-      lab.style.animationDelay  = (1900 + i*260) + 'ms';
-    }
-  });
-
-  const note = el('text', {x:X(0.27), y:Y(-6.2), 'text-anchor':'middle',
-    'font-family':'IBM Plex Mono, monospace', 'font-size':11, fill:'#6D2E86'},
-    reduce ? '' : 'pt');
-  note.textContent = 'unobserved';
-  if (!reduce) note.style.animationDelay = '2600ms';
-})();
-</script>
 
 </body>
 </html>
