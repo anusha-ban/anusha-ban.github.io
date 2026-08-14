@@ -174,8 +174,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
       Welcome! My name is Anusha Banninthaya and I am currently a Master of Engineering in Space Engineering student at the
       <strong>University of Michigan</strong>.  Everything on this page is a project I loved working on from orbit estimators I have
       debugged line by line to ionospheric plasma physics I have simulated for satellites and thrusters I have etched and
-      tested by hand. I am applying to PhD programs for <span class="todo">Fall 2027</span>
-      entry and I hope to spend my career in electric propulsion research, working toward
+      tested by hand. I hope to spend my career in electric propulsion research, working toward
       the day the electric rocket is not a concept but the ordinary way we move through space.
     </p>
   </section>
@@ -200,22 +199,21 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         <h2>Orbit determination and electrospray emitters</h2>
         <p class="role">Graduate Student Researcher · University of Michigan</p>
         <p>
-          I extend an object-oriented MATLAB orbit determination framework spanning
+          I worked on an object-oriented MATLAB orbit determination framework spanning
           initial orbit determination, batch weighted least-squares precise orbit
-          determination, and high-fidelity propagation, applied to low Earth orbit debris.
+          determination and high-fidelity propagation, applied to low Earth orbit debris.
         </p>
         <p>
-          Post-fit angular residuals now sit below 10 arcseconds, down from more than 300 —
-          a roughly thirty-fold improvement. Residuals at that level mean the estimator's
-          error is approaching the sensor's own, which is the point at which the orbit
-          solution becomes useful for conjunction work.
+          Initially working with optical data, post-fit angular residuals now sit below 10 arcseconds, down from more than 300 —
+          a roughly thirty-fold improvement. My main contribution to the estimator is on the drag side: a Bayesian a priori
+          ballistic coefficient estimate paired with an adaptive drag observability
+          analysis, which cut drag estimation error by more than 95 percent. Knowing
+          <em>when</em> drag is observable turns out to matter as much as how it is modeled.
         </p>
         <p>
-          The radar path is where the novel work sits. A tracking radar returns range and
-          range-rate but no angles, so the line of sight is unconstrained by any single
-          observation and the standard angles-based machinery does not transfer. I developed
+          Pivoting the modelling to radar data (no angles) allowed me to explore novel methods of orbit determination. I developed
           an initial orbit determination method that recovers a state estimate from range and
-          range-rate alone, with no angular data, and hands that estimate to the precise
+          range-rate alone using nonlinear system optimisation and hands that estimate to the precise
           orbit determination stage.
         </p>
 
@@ -239,16 +237,10 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
             </figcaption>
           </div>
         </figure>
-
+       
         <p>
-          My main contribution to the estimator is on the drag side: a Bayesian a priori
-          ballistic coefficient estimate paired with an adaptive drag observability
-          analysis, which cut drag estimation error by more than 95 percent. Knowing
-          <em>when</em> drag is observable turns out to matter as much as how it is modeled.
-        </p>
-        <p>
-          In the same group I manufacture solid tungsten electrospray thruster emitters by
-          electrochemical etching, and I am investigating porous emitter fabrication
+          In the same group, I am currently working on manufacturing solid tungsten electrospray thruster emitters by
+          electrochemical etching while simultaneously investigating porous emitter fabrication
           techniques aimed at long-duration emitter performance.
         </p>
       </div>
