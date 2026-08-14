@@ -60,17 +60,18 @@ a{color:inherit}
 /* ---------- hero ---------- */
 .hero{padding:60px 0 0}
 .eyebrow{font-family:var(--data);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin:0 0 22px}
+.hero-body{display:grid;grid-template-columns:minmax(0,58ch) 1fr;gap:40px;align-items:center}
 .deck{font-size:20px;color:var(--graphite);max-width:58ch;margin:0}
 .deck strong{color:var(--ink);font-weight:600}
 
-/* ---------- hero accent: electrospray emitter ---------- */
-.emitter{display:block;width:100%;max-width:360px;height:auto;margin:38px 0 0;overflow:visible}
-.ion{animation:emit 2.56s linear infinite}
-@keyframes emit{
-  0%   {transform:translateX(0);    opacity:0}
-  10%  {opacity:1}
-  78%  {opacity:1}
-  100% {transform:translateX(226px); opacity:0}
+/* ---------- hero accent: Hall effect thruster ---------- */
+.emitter{display:block;width:100%;max-width:200px;height:auto;margin:0 auto;overflow:visible}
+.stop-glow{stop-color:var(--glow)}
+.stop-signal{stop-color:var(--signal)}
+.plume{animation:flicker 3.4s ease-in-out infinite}
+@keyframes flicker{
+  0%,100%{opacity:.88}
+  50%    {opacity:1}
 }
 
 /* ---------- figures ---------- */
@@ -155,7 +156,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 
 @media (prefers-reduced-motion:reduce){
-  .ion{animation:none;opacity:.55}
+  .plume{animation:none;opacity:.95}
 }
 
 @media (max-width:820px){
@@ -166,6 +167,8 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
   .marginalia .tag{width:100%}
   .cols{grid-template-columns:1fr;gap:26px}
   .figpair{grid-template-columns:1fr;gap:14px}
+  .hero-body{grid-template-columns:1fr;gap:28px}
+  .emitter{max-width:150px;margin:0}
   .hero{padding:44px 0 0}
   .band{margin-top:60px}
 }
@@ -187,31 +190,58 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
 
   <section class="hero">
     <p class="eyebrow">Electric propulsion · Plasma Physics · Astrodynamics</p>
-    <p class="deck">
-      Welcome! My name is Anusha Banninthaya and I am currently a Master of Engineering in Space Engineering student at the
-      <strong>University of Michigan</strong>. This portfolio is a collection of all the experiences I loved working on from orbit estimators I have
-      debugged line by line to ionospheric plasma physics I have simulated for satellites and thrusters I have etched and
-      tested by hand. I hope to spend my career in electric propulsion research, working toward
-      the day the electric rocket is not a concept but the ordinary way we move through space. I hope you enjoy reading about the experiences as much as I enjoyed working on them!
-    </p>
 
-    <svg class="emitter" viewBox="0 0 360 84" role="img"
-         aria-label="Stylised electrospray emitter: a needle tip emitting a stream of charged droplets through an extractor grid.">
-      <path d="M6 34 L98 40.6 L98 43.4 L6 50 Z" fill="var(--ink)" opacity="0.85"/>
-      <path d="M98 40.6 L98 43.4 L116 42 Z" fill="var(--glow)"/>
-      <rect x="142" y="8"  width="7" height="26" fill="var(--graphite)" opacity="0.45"/>
-      <rect x="142" y="50" width="7" height="26" fill="var(--graphite)" opacity="0.45"/>
-      <g fill="var(--signal)">
-        <circle class="ion" cx="118" cy="42"   r="2.4" style="animation-delay:0s"/>
-        <circle class="ion" cx="118" cy="39.4" r="1.7" style="animation-delay:.32s"/>
-        <circle class="ion" cx="118" cy="44.6" r="1.7" style="animation-delay:.64s"/>
-        <circle class="ion" cx="118" cy="42"   r="2.1" style="animation-delay:.96s"/>
-        <circle class="ion" cx="118" cy="37.6" r="1.4" style="animation-delay:1.28s"/>
-        <circle class="ion" cx="118" cy="46.4" r="1.4" style="animation-delay:1.6s"/>
-        <circle class="ion" cx="118" cy="42"   r="1.9" style="animation-delay:1.92s"/>
-        <circle class="ion" cx="118" cy="40.8" r="1.5" style="animation-delay:2.24s"/>
-      </g>
-    </svg>
+    <div class="hero-body">
+      <p class="deck">
+        Welcome! My name is Anusha Banninthaya and I am currently a Master of Engineering in Space Engineering student at the
+        <strong>University of Michigan</strong>. This portfolio is a collection of all the experiences I loved working on from orbit estimators I have
+        debugged line by line to ionospheric plasma physics I have simulated for satellites and thrusters I have etched and
+        tested by hand. I hope to spend my career in electric propulsion research, working toward
+        the day the electric rocket is not a concept but the ordinary way we move through space. I hope you enjoy reading about the experiences as much as I enjoyed working on them!
+      </p>
+
+      <svg class="emitter" viewBox="0 0 140 320" role="img"
+           aria-label="Stylised Hall effect thruster in cross-section, firing upward: an annular discharge channel with a glowing exit plane and a diverging plume of accelerated ions.">
+        <defs>
+          <linearGradient id="plumeGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%"   class="stop-glow"   stop-opacity="0.55"/>
+            <stop offset="26%"  class="stop-signal" stop-opacity="0.30"/>
+            <stop offset="100%" class="stop-signal" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="coreGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%"   class="stop-glow"   stop-opacity="0.60"/>
+            <stop offset="100%" class="stop-glow"   stop-opacity="0"/>
+          </linearGradient>
+          <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
+          <filter id="softer" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="4"/>
+          </filter>
+        </defs>
+
+        <!-- plume: broad diverging cone with a hotter core near the throat -->
+        <g class="plume">
+          <polygon points="42,216 98,216 126,26 14,26" fill="url(#plumeGrad)" filter="url(#soft)"/>
+          <polygon points="48,216 92,216 106,96 34,96" fill="url(#coreGrad)" filter="url(#softer)"/>
+        </g>
+
+        <!-- mounting base -->
+        <rect x="28" y="284" width="84" height="18" rx="2" fill="var(--ink)" opacity="0.9"/>
+        <!-- outer walls and inner pole (annular channel in cross-section) -->
+        <rect x="34" y="212" width="12" height="74" fill="var(--ink)" opacity="0.85"/>
+        <rect x="94" y="212" width="12" height="74" fill="var(--ink)" opacity="0.85"/>
+        <rect x="56" y="212" width="28" height="74" fill="var(--ink)" opacity="0.85"/>
+        <!-- discharge glow inside the channel -->
+        <rect x="46" y="212" width="10" height="24" fill="var(--glow)" opacity="0.42"/>
+        <rect x="84" y="212" width="10" height="24" fill="var(--glow)" opacity="0.42"/>
+        <!-- magnet coils -->
+        <rect x="36" y="248" width="8" height="7" fill="var(--graphite)" opacity="0.55"/>
+        <rect x="96" y="248" width="8" height="7" fill="var(--graphite)" opacity="0.55"/>
+        <!-- hollow cathode -->
+        <rect x="12" y="226" width="17" height="9" rx="1.5" fill="var(--graphite)" opacity="0.55"/>
+      </svg>
+    </div>
   </section>
 
 </div>
