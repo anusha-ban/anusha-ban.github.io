@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anusha — Astrodynamics &amp; Electric Propulsion</title>
-<meta name="description" content="Graduate researcher in space surveillance and orbit determination, University of Michigan.">
+<title>Anusha Banninthaya — Astrodynamics &amp; Electric Propulsion</title>
+<meta name="description" content="Graduate researcher in orbit determination and electric propulsion at the University of Michigan. Applying to PhD programs.">
+
+<!-- Remove the next line when you're ready for this page to appear in search results. -->
+<meta name="robots" content="noindex">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -26,62 +30,34 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:18px;
-  line-height:1.6;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:18px;line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit}
-
 .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
 
 /* ---------- masthead ---------- */
-.masthead{
-  display:flex;align-items:baseline;justify-content:space-between;
-  gap:24px;padding:28px 0 0;
-}
-.wordmark{
-  font-family:var(--display);
-  font-weight:700;font-size:20px;
-  letter-spacing:.14em;text-transform:uppercase;
-}
-.masthead nav{
-  font-family:var(--data);font-size:12.5px;
-  display:flex;gap:22px;flex-wrap:wrap;
-}
-.masthead nav a{
-  text-decoration:none;color:var(--graphite);
-  padding-bottom:3px;border-bottom:1px solid transparent;
-}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:28px 0 0}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.14em;text-transform:uppercase}
+.masthead nav{font-family:var(--data);font-size:12.5px;display:flex;gap:22px;flex-wrap:wrap}
+.masthead nav a{text-decoration:none;color:var(--graphite);padding-bottom:3px;border-bottom:1px solid transparent}
 .masthead nav a:hover,.masthead nav a:focus-visible{color:var(--ink);border-bottom-color:var(--signal)}
 
 /* ---------- hero ---------- */
 .hero{padding:76px 0 0}
-.eyebrow{
-  font-family:var(--data);font-size:12px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--signal);margin:0 0 22px;
-}
+.eyebrow{font-family:var(--data);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin:0 0 22px}
 .hero h1{
   font-family:var(--display);font-weight:700;
-  font-size:clamp(38px,6.4vw,76px);
-  line-height:1.02;letter-spacing:-.015em;
+  font-size:clamp(38px,6.4vw,76px);line-height:1.02;letter-spacing:-.015em;
   margin:0;max-width:16ch;
 }
 .hero h1 em{font-style:normal;color:var(--signal)}
-.deck{
-  font-size:20px;color:var(--graphite);
-  max-width:56ch;margin:26px 0 0;
-}
+.deck{font-size:20px;color:var(--graphite);max-width:58ch;margin:26px 0 0}
 .deck strong{color:var(--ink);font-weight:600}
 
 /* ---------- figure ---------- */
-.figure{
-  margin:56px 0 0;background:var(--panel);
-  border:1px solid var(--rule);
-}
+.figure{margin:56px 0 0;background:var(--panel);border:1px solid var(--rule)}
 .figure svg{display:block;width:100%;height:auto}
 .figcap{
   display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
@@ -91,83 +67,48 @@ a{color:inherit}
 
 /* ---------- section scaffold ---------- */
 .band{border-top:1px solid var(--rule);margin-top:88px}
-.band:first-of-type{margin-top:96px}
-.row{
-  display:grid;grid-template-columns:200px 1fr;gap:48px;
-  padding:48px 0;
-}
+.row{display:grid;grid-template-columns:210px 1fr;gap:48px;padding:48px 0}
 .row + .row{border-top:1px solid var(--rule)}
 
-.marginalia{font-family:var(--data);font-size:12px;color:var(--graphite);line-height:1.9}
-.marginalia .tag{
-  display:block;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink);font-size:11px;margin-bottom:10px;
-}
+.marginalia{font-family:var(--data);font-size:12px;color:var(--graphite);line-height:1.85}
+.marginalia .tag{display:block;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-size:11px;margin-bottom:12px}
 .marginalia dl{margin:0}
 .marginalia dt{color:var(--ink);opacity:.45}
-.marginalia dd{margin:0 0 8px}
+.marginalia dd{margin:0 0 9px}
 
-.entry h2{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(26px,3.2vw,38px);line-height:1.1;
-  letter-spacing:-.01em;margin:0 0 4px;
-}
-.entry h3{
-  font-family:var(--display);font-weight:600;font-size:21px;
-  letter-spacing:.01em;margin:0 0 10px;
-}
-.entry p{margin:0 0 16px;max-width:64ch}
+.entry h2{font-family:var(--display);font-weight:700;font-size:clamp(25px,3.1vw,36px);line-height:1.1;letter-spacing:-.01em;margin:0 0 6px}
+.entry p{margin:0 0 15px;max-width:64ch}
 .entry p:last-child{margin-bottom:0}
-.role{
-  font-family:var(--data);font-size:12.5px;color:var(--plum);
-  margin:0 0 18px;
-}
+.role{font-family:var(--data);font-size:12.5px;color:var(--plum);margin:0 0 18px}
 
 /* ---------- lists ---------- */
 .stack{list-style:none;margin:0;padding:0}
 .stack li{padding:18px 0;border-top:1px solid var(--rule)}
 .stack li:first-child{border-top:0;padding-top:0}
-.stack .what{font-family:var(--display);font-weight:600;font-size:19px;display:block}
-.stack .why{color:var(--graphite);font-size:16.5px;display:block;max-width:60ch}
+.stack .what{font-family:var(--display);font-weight:600;font-size:19px;display:block;line-height:1.25}
+.stack .why{color:var(--graphite);font-size:16.5px;display:block;max-width:62ch;margin-top:4px}
+.stack .meta{font-family:var(--data);font-size:12px;color:var(--plum);display:block;margin-top:7px}
+
+.cite{font-size:16.5px;max-width:66ch}
+.cite b{font-weight:600}
+.cite i{color:var(--graphite)}
 
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-.cols h3{
-  font-family:var(--data);font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--signal);
-  font-weight:500;margin:0 0 12px;
-}
+.cols h3{font-family:var(--data);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);font-weight:500;margin:0 0 12px}
 .cols ul{list-style:none;margin:0;padding:0;font-size:16.5px}
 .cols li{padding:5px 0;border-bottom:1px solid var(--rule)}
 
 /* ---------- placeholders ---------- */
-.todo{
-  font-family:var(--data);font-size:13px;
-  background:#FFF4D6;color:#6B4C00;
-  padding:1px 7px;border-bottom:1px dotted #B08900;
-  white-space:nowrap;
-}
+.todo{font-family:var(--data);font-size:13px;background:#FFF4D6;color:#6B4C00;padding:1px 7px;border-bottom:1px dotted #B08900;white-space:nowrap}
 
 /* ---------- contact ---------- */
 .contact{padding:56px 0 96px}
-.contact h2{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(30px,4.6vw,52px);margin:0 0 10px;letter-spacing:-.01em;
-}
-.links{
-  display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 0;
-  font-family:var(--data);font-size:13.5px;
-}
-.links a{
-  text-decoration:none;border:1px solid var(--ink);
-  padding:9px 16px;transition:background .15s,color .15s;
-}
+.contact h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.6vw,52px);margin:0 0 10px;letter-spacing:-.01em}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 0;font-family:var(--data);font-size:13.5px}
+.links a{text-decoration:none;border:1px solid var(--ink);padding:9px 16px;transition:background .15s,color .15s}
 .links a:hover,.links a:focus-visible{background:var(--ink);color:var(--paper)}
 
-footer{
-  border-top:1px solid var(--rule);
-  font-family:var(--data);font-size:11.5px;color:var(--graphite);
-  padding:20px 0 40px;
-}
+footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px;color:var(--graphite);padding:20px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 
@@ -178,7 +119,6 @@ footer{
 .plotchrome{opacity:0;animation:fade .6s ease-out forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
-
 @media (prefers-reduced-motion:reduce){
   .trace,.tracklet,.pt,.plotchrome{animation:none;stroke-dashoffset:0;opacity:1}
 }
@@ -199,34 +139,35 @@ footer{
 
 <div class="wrap">
   <header class="masthead">
-    <div class="wordmark">Anusha <span class="todo">Last name</span></div>
+    <div class="wordmark">Anusha Banninthaya</div>
     <nav>
       <a href="#research">Research</a>
-      <a href="#earlier">Earlier work</a>
-      <a href="#methods">Methods</a>
-      <a href="#writing">Writing</a>
+      <a href="#applied">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <p class="eyebrow">Space surveillance · Astrodynamics · Electric propulsion</p>
-    <h1>Recovering orbits from <em>range and range-rate</em> alone.</h1>
+    <p class="eyebrow">Orbit determination · Electric propulsion · Space plasma</p>
+    <h1>Estimating orbits from <em>sparse tracking arcs</em>.</h1>
     <p class="deck">
-      I write orbit determination software for space surveillance, and I build the
-      electric propulsion hardware that flies. Graduate researcher at the
-      <strong>University of Michigan</strong>, Space Mission Research Group.
-      Applying to PhD programs for <span class="todo">Fall 20XX</span>.
+      I work on both halves of the problem: the estimation software that turns
+      short, scattered observations into an orbit, and the propulsion hardware
+      that changes one. Master of Engineering in Space Engineering at the
+      <strong>University of Michigan</strong>. Applying to PhD programs for
+      <span class="todo">Fall 2027</span> entry.
     </p>
   </section>
 
   <figure class="figure">
     <svg id="plot" viewBox="0 0 1000 320" role="img"
-         aria-label="Range-rate against time. Three short measurement arcs from ground radar sites sit on a single continuous predicted curve, with long unobserved gaps between them.">
+         aria-label="Range-rate against time. Three short observation arcs sit on a single continuous predicted curve, separated by long unobserved gaps.">
     </svg>
     <figcaption class="figcap">
-      <span>Fig. 1 — Range-rate residual geometry: three tracklets, one orbit.</span>
-      <span>ksr · New Zealand &nbsp;/&nbsp; azsr · Azores &nbsp;/&nbsp; wasr · Australia</span>
+      <span>Fig. 1 — The orbit determination problem: short observed arcs, one continuous trajectory.</span>
+      <span>Illustrative</span>
     </figcaption>
   </figure>
 </div>
@@ -239,63 +180,85 @@ footer{
       <aside class="marginalia">
         <span class="tag">Current</span>
         <dl>
-          <dt>Group</dt><dd>SMRG, U. Michigan</dd>
+          <dt>Group</dt><dd>Space Mobility Research Group</dd>
           <dt>Advisor</dt><dd>Prof. Oliver Jia-Richards</dd>
-          <dt>Stack</dt><dd>MATLAB, TDM tracklets</dd>
-          <dt>σ range</dt><dd>≈ 12 m</dd>
-          <dt>σ range-rate</dt><dd>≈ 3.4 m/s</dd>
+          <dt>Since</dt><dd>June 2026</dd>
+          <dt>Tools</dt><dd>MATLAB, GMAT</dd>
         </dl>
       </aside>
       <div class="entry">
-        <h2>Radar-only orbit determination</h2>
-        <p class="role">Thesis work · initial orbit determination through precise orbit determination</p>
+        <h2>Orbit determination and electrospray emitters</h2>
+        <p class="role">Graduate Student Researcher · University of Michigan</p>
         <p>
-          A tracking radar returns range and range-rate, but no angles. That missing
-          line-of-sight direction leaves a single tracklet structurally underdetermined —
-          four unknowns against two equations — so the usual angles-only machinery does
-          not transfer.
+          I extend an object-oriented MATLAB orbit determination framework spanning
+          initial orbit determination, batch weighted least-squares precise orbit
+          determination, and high-fidelity propagation.
         </p>
         <p>
-          I built an end-to-end MATLAB pipeline that takes raw tracklets from three ground
-          sites and returns a refined orbit with element uncertainties. It runs initial
-          orbit determination through a multi-revolution Lambert solve, then batch weighted
-          least squares with EGM2008 gravity, NRLMSISE-00 drag, and third-body
-          perturbations.
+          My main contribution to the estimator is on the drag side: a Bayesian a priori
+          ballistic coefficient estimate paired with an adaptive drag observability
+          analysis, which cut drag estimation error by more than 95 percent. Knowing
+          <em>when</em> drag is observable turns out to matter as much as how it is modeled.
         </p>
         <p>
-          The core contribution is a square three-tracklet formulation: enforcing velocity
-          continuity at the middle epoch closes the direction problem without gridding the
-          solution space. I characterized measurement noise three independent ways and
-          traced fit quality to a single geometric discriminant — the minimum cross-site
-          Lambert transfer angle — which explains why near-antipodal baselines fail and
-          which pass combinations to trust.
+          In the same group I manufacture solid tungsten electrospray thruster emitters by
+          electrochemical etching, and I am investigating porous emitter fabrication
+          techniques aimed at long-duration emitter performance.
         </p>
       </div>
     </div>
 
     <div class="row">
       <aside class="marginalia">
-        <span class="tag">Laboratory</span>
+        <span class="tag">Previous</span>
         <dl>
-          <dt>Devices</dt><dd>Electrospray emitters</dd>
-          <dt></dt><dd>CNT neutralizers</dd>
-          <dt></dt><dd>Hall thrusters</dd>
-          <dt>Facilities</dt><dd>Vacuum chamber</dd>
-          <dt></dt><dd>Microfabrication</dd>
+          <dt>Group</dt><dd>Solar &amp; Heliospheric Research Group</dd>
+          <dt>Advisor</dt><dd>Prof. Susan Lepri</dd>
+          <dt>Dates</dt><dd>Oct 2025 – May 2026</dd>
+          <dt>Tools</dt><dd>SRIM, Python</dd>
         </dl>
       </aside>
       <div class="entry">
-        <h2>Electric propulsion hardware</h2>
-        <p class="role">Fabrication, integration, and test</p>
+        <h2>Foils for space-flown mass spectrometers</h2>
+        <p class="role">Research Assistant · University of Michigan</p>
         <p>
-          I fabricate porous tungsten electrospray emitters and carbon nanotube field
-          emission neutralizers, and I have run Hall thruster test campaigns end to end:
-          chamber preparation, integration, diagnostics, and teardown.
+          I compared carbon and graphene foils for time-of-flight measurements in ion mass
+          spectrometers, simulating ion beams through each material in SRIM to characterize
+          angular scattering and energy loss. Foil choice sets the instrument's mass
+          resolution, so the trade is worth doing carefully.
         </p>
         <p>
-          The reason I keep one foot in the lab is that it changes how I write software.
-          Knowing what a measurement costs to produce — and how it fails — is what makes an
-          estimator honest about its own error.
+          I built a Python automation pipeline to run the simulation sweeps and process the
+          output, and evaluated a new method for aligning microchannel plates in a Chevron
+          configuration using a laser source and light meter.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <aside class="marginalia">
+        <span class="tag">Undergraduate</span>
+        <dl>
+          <dt>Institution</dt><dd>Nanyang Technological University</dd>
+          <dt>Advisor</dt><dd>Prof. Chan Wai Lee</dd>
+          <dt>Dates</dt><dd>Aug 2024 – May 2025</dd>
+          <dt>Tools</dt><dd>ProPIC, Ansys EMA3D Charge</dd>
+        </dl>
+      </aside>
+      <div class="entry">
+        <h2>Ionospheric plasma drag in low Earth orbit</h2>
+        <p class="role">Undergraduate Researcher · Singapore</p>
+        <p>
+          I investigated how a satellite's orbital and design parameters govern charged
+          particle drag in low Earth orbit, running more than a hundred simulations in
+          ProPIC, a hybrid particle-in-cell code, to visualize and quantify the plasma drag
+          around a spacecraft.
+        </p>
+        <p>
+          Reconfiguring Ansys EMA3D Charge across satellite geometries and orbital altitudes
+          brought simulation runtime down from 24 hours to 5, which is what made the parameter
+          sweep feasible at all. This work became a first-author-adjacent paper in
+          <em>Acta Astronautica</em>.
         </p>
       </div>
     </div>
@@ -303,30 +266,29 @@ footer{
   </div>
 </div>
 
-<!-- ============ EARLIER ============ -->
-<div class="band" id="earlier">
+<!-- ============ PROJECTS & INDUSTRY ============ -->
+<div class="band" id="applied">
   <div class="wrap">
     <div class="row">
       <aside class="marginalia">
-        <span class="tag">Earlier work</span>
+        <span class="tag">Projects &amp; industry</span>
       </aside>
       <div class="entry">
         <ul class="stack">
           <li>
-            <span class="what">Optical IOD/POD pipeline</span>
-            <span class="why">Angles-based counterpart to the radar path, validated against GMAT synthetic truth data, including a TOD to J2000 conversion and convergence diagnostics for the least-squares refinement.</span>
+            <span class="what">Venus mission architecture — propulsion lead</span>
+            <span class="why">Led propulsion trade studies for an L3Harris mission concept as head of a four-person subteam. Optimized the Earth–Venus trajectory for transit time and propellant using NASA EMTG, arriving at a hybrid chemical–electric architecture. Assessed ground coverage, revisit time, and ΔV in Ansys STK, and wrote MATLAB and Python tools to compute disturbance torques and size reaction wheels and thrusters.</span>
+            <span class="meta">L3Harris · Advisor Prof. Steven Battel · Aug 2025 – present</span>
           </li>
           <li>
-            <span class="what">Very low Earth orbit drag analysis</span>
-            <span class="why">Lifetime and drag-environment study for satellites operating below the usual altitude floor.</span>
+            <span class="what">Carbon nanotube field emission neutralizers</span>
+            <span class="why">Assembled and tested CNT field emission neutralizer configurations in a vacuum chamber. Coupling the nanotubes with resistors raised applicable voltage by 300 V and emission current by 1.5 mA — a neutralization approach that saves both mass and propellant. Measured a sub-20 W Hall effect thruster achieving full plume neutralization at low krypton flow rates, and designed a vacuum-qualified ion beam dissipation system in SolidWorks.</span>
+            <span class="meta">Aliena, Singapore · Space Systems Engineering Intern · Jun – Aug 2024</span>
           </li>
           <li>
-            <span class="what">Ion-foil simulations for mass spectrometry</span>
-            <span class="why">Particle transport modeling through thin foils for instrument design.</span>
-          </li>
-          <li>
-            <span class="what">Venus mission propulsion trade study</span>
-            <span class="why">Led the propulsion trade for a concept study, comparing chemical and electric architectures against mass and transit constraints.</span>
+            <span class="what">VLEO mission planning and hardware-in-the-loop testing</span>
+            <span class="why">Modeled the space environment around a very low Earth orbit satellite in MATLAB, and built an orbit propagator coupled to an electric propulsion model for hardware-in-the-loop ADCS testing, matching FreeFlyer to 99 percent. Ran drag and deorbit analysis across ram-pointing and sun-tracking configurations.</span>
+            <span class="meta">Satellite Research Centre, Singapore · Mission Planning Intern · Jan – May 2024</span>
           </li>
         </ul>
       </div>
@@ -334,46 +296,119 @@ footer{
   </div>
 </div>
 
-<!-- ============ METHODS ============ -->
-<div class="band" id="methods">
+<!-- ============ PUBLICATIONS ============ -->
+<div class="band" id="publications">
   <div class="wrap">
     <div class="row">
       <aside class="marginalia">
-        <span class="tag">Methods</span>
+        <span class="tag">Publications</span>
+      </aside>
+      <div class="entry">
+        <ul class="stack">
+          <li>
+            <p class="cite">
+              Di Fede, S., <b>Banninthaya, A.</b>, Huang, Z., Hu, Y., Elhadidi, B.,
+              Magarotto, M. &amp; Chan, W.L. (2025).
+              Ionospheric plasma drag on small satellites in low-Earth orbit.
+              <i>Acta Astronautica</i>.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <aside class="marginalia">
+        <span class="tag">Talks &amp; posters</span>
+      </aside>
+      <div class="entry">
+        <ul class="stack">
+          <li>
+            <p class="cite">
+              Pontianus, N., Laterza, M., Potrivitu, G.C., <b>Banninthaya, A.</b>, Torner, G.,
+              Zhi, N., Lau, S., Ding, Y., Mark, L.J.W., Ng, Z., Hang, E. &amp; Teo, T.
+              MUSIC-SI 3rd generation: carbon nanotube field emission neutralizer for a low
+              power Hall thruster.
+              <i>39th International Electric Propulsion Conference</i>, London, UK,
+              14–19 September 2025. Presentation, IEPC-2025-100.
+            </p>
+          </li>
+          <li>
+            <p class="cite">
+              Naren Athreyas, K., <b>Banninthaya, A.</b> &amp; Lim, W.S.
+              System design for small satellites in very low Earth orbit.
+              <i>38th Annual Small Satellite Conference</i>, Logan, UT,
+              3–8 August 2024. Poster, SSC24-P4-10.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EDUCATION & SKILLS ============ -->
+<div class="band" id="education">
+  <div class="wrap">
+    <div class="row">
+      <aside class="marginalia">
+        <span class="tag">Education</span>
+      </aside>
+      <div class="entry">
+        <ul class="stack">
+          <li>
+            <span class="what">University of Michigan, Ann Arbor</span>
+            <span class="why">Master of Engineering in Space Engineering. Coursework in astrodynamics, rocket propulsion, and space plasma instrumentation.</span>
+            <span class="meta">Expected December 2026 · GPA 4.00 / 4.00</span>
+          </li>
+          <li>
+            <span class="what">Nanyang Technological University, Singapore</span>
+            <span class="why">Bachelor of Engineering in Aerospace Engineering, Honours with Distinction.</span>
+            <span class="meta">June 2025 · GPA 4.20 / 5.00</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <aside class="marginalia">
+        <span class="tag">Tools</span>
       </aside>
       <div class="entry">
         <div class="cols">
           <div>
-            <h3>Astrodynamics</h3>
+            <h3>Programming</h3>
             <ul>
-              <li>Initial orbit determination</li>
-              <li>Batch weighted least squares</li>
-              <li>Lambert's problem, multi-rev</li>
-              <li>Perturbation modeling</li>
-              <li>Reference frames &amp; time systems</li>
-              <li>Covariance &amp; uncertainty reporting</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Software</h3>
-            <ul>
-              <li>MATLAB, object-oriented design</li>
+              <li>MATLAB</li>
               <li>Python</li>
-              <li>Numerical optimization</li>
-              <li>Nonlinear root finding</li>
-              <li>GMAT</li>
-              <li>Git</li>
+              <li>C++</li>
+              <li>Java</li>
+              <li>Linux</li>
             </ul>
           </div>
           <div>
-            <h3>Laboratory</h3>
+            <h3>Simulation &amp; space</h3>
+            <ul>
+              <li>GMAT</li>
+              <li>Ansys STK</li>
+              <li>Ansys EMA3D Charge</li>
+              <li>NASA EMTG</li>
+              <li>FreeFlyer</li>
+              <li>SPENVIS</li>
+              <li>SRIM</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Hardware &amp; CAD</h3>
             <ul>
               <li>Vacuum chamber operations</li>
-              <li>Microfabrication</li>
-              <li>Porous tungsten processing</li>
-              <li>Thruster diagnostics</li>
-              <li>High-voltage test setup</li>
-              <li>Data acquisition</li>
+              <li>Electrochemical etching</li>
+              <li>Power electronics</li>
+              <li>Wind tunnel testing</li>
+              <li>SolidWorks</li>
+              <li>Fusion 360</li>
+              <li>Instron hardware</li>
+              <li>Arduino</li>
             </ul>
           </div>
         </div>
@@ -382,54 +417,27 @@ footer{
   </div>
 </div>
 
-<!-- ============ WRITING ============ -->
-<div class="band" id="writing">
-  <div class="wrap">
-    <div class="row">
-      <aside class="marginalia">
-        <span class="tag">Writing &amp; talks</span>
-      </aside>
-      <div class="entry">
-        <ul class="stack">
-          <li>
-            <span class="what"><span class="todo">Paper or abstract title</span></span>
-            <span class="why"><span class="todo">Authors</span> · <span class="todo">Venue, year</span> · <span class="todo">link</span></span>
-          </li>
-          <li>
-            <span class="what"><span class="todo">Conference talk or poster title</span></span>
-            <span class="why"><span class="todo">Venue, year</span></span>
-          </li>
-          <li>
-            <span class="what"><span class="todo">Thesis title</span></span>
-            <span class="why"><span class="todo">In progress — expected date</span></span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ============ CONTACT ============ -->
 <div class="band" id="contact">
   <div class="wrap contact">
-    <h2>Let's talk about orbits.</h2>
+    <h2>Let's talk about electric rockets!</h2>
     <p class="deck">
-      I'm looking for a PhD group working on space domain awareness, estimation, or
-      electric propulsion — ideally somewhere the software and the hardware sit in the
-      same building.
+      In the future, I hope to develop and test electric propulsion systems that will ease mobility of spacecraft 
+      around Earth as well as in deep space, aiding humanity in better understanding our planet and the universe.
     </p>
     <div class="links">
-      <a href="mailto:PLACEHOLDER@umich.edu"><span class="todo">your@umich.edu</span></a>
-      <a href="#"><span class="todo">CV (PDF)</span></a>
-      <a href="#"><span class="todo">GitHub</span></a>
-      <a href="#"><span class="todo">Google Scholar</span></a>
-      <a href="#"><span class="todo">ORCID</span></a>
+      <a href="mailto:anushabn@umich.edu">anushabn@umich.edu</a>
+      <a href="https://orcid.org/0009-0007-7255-8424" rel="me">ORCID</a>
+      <a href="https://www.linkedin.com/in/anusha-ban" rel="me">LinkedIn</a>
     </div>
   </div>
 </div>
 
 <div class="wrap">
-  <footer>Last updated <span class="todo">Month 20XX</span> · Ann Arbor, Michigan</footer>
+  <footer>
+    <span>© 2026 Anusha Banninthaya</span>
+    <span>Ann Arbor, Michigan · Updated <span class="todo">Month 2026</span></span>
+  </footer>
 </div>
 
 <script>
@@ -437,14 +445,13 @@ footer{
   const svg = document.getElementById('plot');
   const NS = 'http://www.w3.org/2000/svg';
   const W = 1000, H = 320;
-  const L = 62, R = 28, T = 26, B = 44;          // plot margins
+  const L = 62, R = 28, T = 26, B = 44;
   const x0 = L, x1 = W - R, y0 = T, y1 = H - B;
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Range-rate signature of a pass: dominant term plus a shorter-period component.
   const f = t => 0.78*Math.sin(2*Math.PI*t) + 0.22*Math.sin(6*Math.PI*t + 1.1);
-  const AMP = 7.2;                                // km/s full scale
+  const AMP = 7.2;
   const X = t => x0 + t*(x1-x0);
   const Y = v => (y0+y1)/2 - (v/AMP)*((y1-y0)/2);
 
@@ -456,7 +463,6 @@ footer{
     return e;
   };
 
-  // --- chrome: baseline, axes, gridline labels ---
   [-5, 0, 5].forEach(v => {
     el('line', {x1:x0, x2:x1, y1:Y(v), y2:Y(v),
       stroke:'#D3D9E0', 'stroke-width': v===0 ? 1.2 : 1,
@@ -479,7 +485,6 @@ footer{
     for (let i=0;i<=n;i++){ const t = a + (b-a)*i/n; out.push([X(t), Y(f(t))]); }
     return out;
   };
-
   const animate = (node, dur, delay) => {
     const len = node.getTotalLength();
     node.style.setProperty('--len', len);
@@ -487,17 +492,14 @@ footer{
     node.style.animationDelay = delay + 'ms';
   };
 
-  // --- predicted orbit: continuous, thin, mostly unobserved ---
   const curve = el('path', {d: path(sample(0,1,400)), fill:'none',
-    stroke:'#5A6672', 'stroke-width':1.1, 'stroke-opacity':0.5,
-    'stroke-dasharray':'none'}, reduce ? '' : 'trace');
+    stroke:'#5A6672', 'stroke-width':1.1, 'stroke-opacity':0.5}, reduce ? '' : 'trace');
   if (!reduce) animate(curve, 1500, 200);
 
-  // --- tracklets: short, dense, measured ---
   const windows = [
-    {a:0.055, b:0.115, label:'ksr'},
-    {a:0.435, b:0.495, label:'azsr'},
-    {a:0.800, b:0.860, label:'wasr'}
+    {a:0.055, b:0.115, label:'arc 01'},
+    {a:0.435, b:0.495, label:'arc 02'},
+    {a:0.800, b:0.860, label:'arc 03'}
   ];
 
   windows.forEach((w, i) => {
@@ -506,15 +508,12 @@ footer{
       'stroke-width':3, 'stroke-linecap':'round'}, reduce ? '' : 'tracklet');
     if (!reduce) animate(seg, 550, 1500 + i*260);
 
-    // measurement samples
     for (let k=0; k<=6; k++){
       const t = w.a + (w.b-w.a)*k/6;
-      const dot = el('circle', {cx:X(t), cy:Y(f(t)), r:2.6, fill:'#0B6FB8'},
-        reduce ? '' : 'pt');
-      if (!reduce){ dot.style.animationDelay = (1700 + i*260 + k*30) + 'ms'; }
+      const dot = el('circle', {cx:X(t), cy:Y(f(t)), r:2.6, fill:'#0B6FB8'}, reduce ? '' : 'pt');
+      if (!reduce) dot.style.animationDelay = (1700 + i*260 + k*30) + 'ms';
     }
 
-    // site label with a tick down to the axis
     const mid = (w.a + w.b)/2;
     const tick = el('line', {x1:X(mid), x2:X(mid), y1:Y(f(mid))+10, y2:y1+10,
       stroke:'#0B6FB8', 'stroke-width':1, 'stroke-opacity':0.35,
@@ -529,7 +528,6 @@ footer{
     }
   });
 
-  // --- the point of the figure ---
   const note = el('text', {x:X(0.27), y:Y(-6.2), 'text-anchor':'middle',
     'font-family':'IBM Plex Mono, monospace', 'font-size':11, fill:'#6D2E86'},
     reduce ? '' : 'pt');
