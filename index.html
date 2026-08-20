@@ -374,12 +374,12 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         <p>
           I investigated how a satellite's orbital and design parameters govern charged
           particle drag in low Earth orbit, running more than a hundred simulations in
-          ProPIC to visualize and quantify the drag due to charged particles
+          ProPIC, a fully kinetic Particle-In-Cell (PIC) solver to visualize and quantify the drag due to charged particles
           around a spacecraft at different altitudes and surface potentials.
         </p>
         <p>
-          Reconfiguring Ansys EMA3D Charge across satellite geometries and orbital altitudes
-          brought simulation runtime down from 24 hours to 5, which is what made the parameter
+          Reconfiguring ProPIC to a hybrid PIC solver across satellite geometries and orbital altitudes
+          brought simulation runtime down from 24 hours to 6 hours but maintained the accuracy of the results, which is what made the parameter
           sweep feasible at all. I contributed the formal analysis and data curation to the
           resulting paper in <em>Acta Astronautica</em>.
         </p>
