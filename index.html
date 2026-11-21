@@ -88,6 +88,7 @@ a{color:inherit}
 .fig--solo{margin:22px 0 6px;max-width:620px}
 .fig--narrow{max-width:528px}
 .figpair--tight{margin:22px 0 6px;max-width:720px}
+.fig--wide{max-width:none}
 .fig--photo img{padding:0;aspect-ratio:4/3;object-fit:cover;object-position:center}
 .fig--natural img{aspect-ratio:auto}
 .fig--dark{background:#080A12;border-color:#080A12}
@@ -279,7 +280,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
           Pivoting the modelling to radar data (no angles) allowed me to explore novel methods of orbit determination. I developed
           an initial orbit determination method that recovers a state estimate from range and
           range-rate alone using nonlinear system optimization and hands that estimate to the precise
-          orbit determination stage. With the creation of this novel method, I submitted my first lead author technical note to the Journal of Spacecrafts and Rockets that is currently under review.
+          orbit determination stage. With the creation of this novel method, I submitted my first lead author technical note to the <em>Journal of Spacecraft and Rockets</em> that is currently under review.
         </p>
 
         <figure class="figpair">
@@ -304,9 +305,48 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
         </figure>
 
         <p>
-          In the same group, I am currently working on modelling field ionization and evaluating its feasability for electric propulsion systems. I developed a Test Particle Monte Carlo simulation coupled with a Particle-In-Cell solver on MATLAB that models the rarefied propellant flow through a needle-shroud thruster geometry and calculates the ionization rate and exit current characteristics of the thruster. I am simultaneously manufacturing solid tungsten electrospray thruster emitters by
-          electrochemical etching while investigating porous emitter fabrication
-          techniques aimed at long-duration emitter performance as a side passion project. 
+          In the same group, I am currently modelling field ionization and evaluating its
+          feasibility for electric propulsion systems. I developed a Test Particle Monte Carlo
+          simulation coupled with a Particle-In-Cell solver in MATLAB that models the rarefied
+          propellant flow through a needle&ndash;shroud thruster geometry and calculates the
+          ionization rate and exit current characteristics of the thruster.
+        </p>
+
+        <div class="figpair figpair--tight">
+          <div class="fig">
+            <a href="fi-field-apex.jpg">
+              <img src="fi-field-apex.jpg" width="992" height="856"
+                   alt="Electric field magnitude around the needle apex as a filled contour map with logarithmic level lines. The field peaks at the tip and falls off downstream. Black markers along the needle surface mark where ions are born.">
+            </a>
+            <div class="figcap">
+              <span>Fig. 3 &mdash; |E| at the needle apex with ion birth points. 40 kV needle, 100 nm tip radius. Peak field above 10<sup>10.75</sup> V/m at the apex.</span>
+            </div>
+          </div>
+          <div class="fig">
+            <a href="fi-trajectories.jpg">
+              <img src="fi-trajectories.jpg" width="785" height="640"
+                   alt="Ion trajectories traced from the needle tip through the shroud aperture. Paths that clear the aperture are drawn in blue; paths intercepted by the shroud are drawn in red.">
+            </a>
+            <div class="figcap">
+              <span>Fig. 4 &mdash; Ion trajectories through the needle&ndash;shroud geometry. 7 of 58 ions clear the aperture, 51 are intercepted.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fig fig--solo fig--wide">
+          <a href="fi-flowfield.jpg">
+            <img src="fi-flowfield.jpg" width="1656" height="1032"
+                 alt="Five panels of the rarefied flow through the needle-shroud channel: normalised number density, mean axial velocity, mean radial velocity, temperature, and Knudsen number, each over the same axial and radial domain.">
+          </a>
+          <div class="figcap">
+            <span>Fig. 5 &mdash; Test Particle Monte Carlo flow field: number density, axial and radial velocity, temperature, and Knudsen number. Argon at 500 K. Kn stays above 10<sup>3</sup> throughout, confirming free-molecular flow.</span>
+          </div>
+        </div>
+
+        <p>
+          Alongside this, as a side passion project, I manufacture solid tungsten electrospray
+          thruster emitters by electrochemical etching and investigate porous emitter
+          fabrication techniques aimed at long-duration emitter performance.
         </p>
       </div>
     </div>
@@ -342,7 +382,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                    alt="Probability density of fractional energy loss for hydrogen ions passing through graphene foil, plotted for incidence angles from zero to thirty degrees over a histogram of the zero-degree case.">
             </a>
             <div class="figcap">
-              <span>Fig. 3 — Energy loss of H ions through graphene foil, TRIM. Mean ΔE/E₀ rises from 0.0122 at normal incidence to 0.0140 at 30°.</span>
+              <span>Fig. 6 — Energy loss of H ions through graphene foil, TRIM. Mean ΔE/E₀ rises from 0.0122 at normal incidence to 0.0140 at 30°.</span>
             </div>
           </div>
           <div class="fig fig--photo fig--natural">
@@ -351,7 +391,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                    alt="Optical bench built from aluminium extrusion, with a laser projecting a red spot onto a plate mounted on a stage, and a handheld light meter reading out beside it.">
             </a>
             <div class="figcap">
-              <span>Fig. 4 — Microchannel plate alignment bench with laser and light sensor in frame.</span>
+              <span>Fig. 7 — Microchannel plate alignment bench with laser and light sensor in frame.</span>
             </div>
           </div>
         </div>
@@ -390,7 +430,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                  alt="Two three-dimensional plots of plasma potential around a flat satellite body, shown side by side. A wake of depressed potential extends behind the spacecraft in each, larger in the second panel.">
           </a>
           <div class="figcap">
-            <span>Fig. 5 — Plasma potential around a satellite held at −50 V. (a) 400 km, (b) 700 km. ProPIC simulation output.</span>
+            <span>Fig. 8 — Plasma potential around a satellite held at −50 V. (a) 400 km, (b) 700 km. ProPIC simulation output.</span>
           </div>
         </div>
       </div>
@@ -418,7 +458,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                      alt="NASA EMTG output showing a low-thrust Earth to Venus transfer. Concentric orbit traces with thrust vectors marked along the spiral, annotated with launch, begin spiral, and end spiral events.">
               </a>
               <div class="figcap">
-                <span>Fig. 6 — Earth–Venus low-thrust transfer, NASA EMTG simulation output. Launch 14 Jan 2032, Venus spiral complete 14 Jan 2036. Departure C3 1.314 km²/s², DLA 28.5°. Wet mass 3167 kg, 1735 kg at end of spiral.</span>
+                <span>Fig. 9 — Earth–Venus low-thrust transfer, NASA EMTG simulation output. Launch 14 Jan 2032, Venus spiral complete 14 Jan 2036. Departure C3 1.314 km²/s², DLA 28.5°. Wet mass 3167 kg, 1735 kg at end of spiral.</span>
               </div>
             </div>
           </li>
@@ -433,7 +473,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                        alt="Three carbon nanotube emitters mounted alongside a Hall thruster on a stand inside a stainless steel vacuum chamber, with kapton-taped wiring and gas lines running to the feedthroughs.">
                 </a>
                 <div class="figcap">
-                  <span>Fig. 7 — Three-emitter CNT neutralizer configuration with the Hall thruster in vacuum chamber.</span>
+                  <span>Fig. 10 — Three-emitter CNT neutralizer configuration with the Hall thruster in vacuum chamber.</span>
                 </div>
               </div>
               <div class="fig fig--photo">
@@ -442,7 +482,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                        alt="Ion Beam Dissipation System I designed being used in the vacuum chamber">
                 </a>
                 <div class="figcap">
-                  <span>Fig. 8 — Ion beam dissipation system, designed in SolidWorks and qualified for chamber operation.</span>
+                  <span>Fig. 11 — Ion beam dissipation system, designed in SolidWorks and qualified for chamber operation.</span>
                 </div>
               </div>
             </div>
@@ -457,7 +497,7 @@ footer{border-top:1px solid var(--rule);font-family:var(--data);font-size:11.5px
                      alt="Three-dimensional plot of a satellite orbit traced in red around a rendered Earth, axes labelled X, Y and Z position in metres in the Earth-centred inertial frame.">
               </a>
               <div class="figcap">
-                <span>Fig. 9 — Propagated orbit in the ECI frame, output from the MATLAB propagator.</span>
+                <span>Fig. 12 — Propagated orbit in the ECI frame, output from the MATLAB propagator.</span>
               </div>
             </div>
           </li>
